@@ -1,46 +1,83 @@
-# Astro Starter Kit: Basics
+# Amanto Landing
 
-```sh
-pnpm create astro@latest -- --template basics
+Landing page con efecto de texto animado usando Astro + Aceternity UI
+
+## 🚀 Stack
+
+- **Astro 5.14** - Framework
+- **React 19** - Componentes interactivos
+- **Tailwind CSS 4** - Estilos
+- **Framer Motion** - Animaciones
+- **Aceternity UI** - Componente de texto con efecto hover
+
+## 📦 Desarrollo
+
+```bash
+# Instalar dependencias
+pnpm install
+
+# Iniciar servidor de desarrollo
+pnpm dev
+
+# Construir para producción
+pnpm build
+
+# Vista previa de producción
+pnpm preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🐳 Deploy en Dokploy
 
-## 🚀 Project Structure
+Este proyecto está configurado para desplegarse en Dokploy usando Nixpacks.
 
-Inside of your Astro project, you'll see the following folders and files:
+### Requisitos:
+- **Node.js**: 20.18.0 o superior
+- **pnpm**: 9.0.0 o superior
 
-```text
+### Configuración:
+
+Los siguientes archivos están configurados para el deployment:
+
+- `.node-version` - Especifica la versión de Node.js
+- `.nvmrc` - Versión para NVM
+- `nixpacks.toml` - Configuración de Nixpacks para Dokploy
+- `.dockerignore` - Optimiza el build de Docker
+
+### Variables de entorno:
+
+No se requieren variables de entorno para el despliegue básico.
+
+## 📁 Estructura
+
+```
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/              # Archivos estáticos
+├── src/
+│   ├── components/      # Componentes React y Astro
+│   │   ├── ui/         # Componentes UI de Aceternity
+│   │   └── *.tsx       # Componentes React
+│   ├── layouts/        # Layouts de Astro
+│   ├── lib/            # Utilidades
+│   ├── pages/          # Páginas de Astro
+│   └── styles/         # Estilos globales
+├── astro.config.mjs    # Configuración de Astro
+├── components.json     # Configuración de shadcn/ui
+├── nixpacks.toml       # Configuración de Nixpacks
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🎨 Componentes
 
-## 🧞 Commands
+### TextHoverEffect
 
-All commands are run from the root of the project, from a terminal:
+Efecto de texto animado con gradiente que sigue el cursor.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+```tsx
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
-## 👀 Want to learn more?
+<TextHoverEffect text="AMANTO" />
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📄 Licencia
+
+MIT
