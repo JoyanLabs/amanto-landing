@@ -10,6 +10,13 @@ export default defineConfig({
   integrations: [react()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    preview: {
+      allowedHosts: [
+        "amanto.joyan.dev",
+        "localhost",
+        "0.0.0.0"
+      ]
+    }
   }
 });
